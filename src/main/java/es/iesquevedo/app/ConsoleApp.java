@@ -18,11 +18,11 @@ public class ConsoleApp {
     private final AlquilerService service;
 
     // los DAOs/servicio se crean internamente
-    public ConsoleApp() {
-        String base = System.getProperty("user.dir");
-        this.peliculaDao = new JsonPeliculaDao(base + "/peliculas.json");
-        this.socioDao = new JsonSocioDao(base + "/socios.json");
-        this.service = new AlquilerService();
+    public ConsoleApp(JsonPeliculaDao jsonP,JsonSocioDao jsonS,AlquilerService serv) {
+
+        this.peliculaDao = jsonP;
+        this.socioDao = jsonS;
+        this.service = serv;
     }
 
     public void crearPelicula(Scanner scanner) {
