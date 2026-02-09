@@ -19,7 +19,6 @@ public class ConsoleApp {
 
     // los DAOs/servicio se crean internamente
     public ConsoleApp(JsonPeliculaDao jsonP,JsonSocioDao jsonS,AlquilerService serv) {
-
         this.peliculaDao = jsonP;
         this.socioDao = jsonS;
         this.service = serv;

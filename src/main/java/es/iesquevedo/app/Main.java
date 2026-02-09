@@ -2,6 +2,7 @@ package es.iesquevedo.app;
 
 import es.iesquevedo.dao.*;
 import es.iesquevedo.servicios.AlquilerService;
+import es.iesquevedo.servicios.AlquilerServiceImpl;
 
 import java.util.Scanner;
 
@@ -11,7 +12,7 @@ public class Main {
         JsonPeliculaDao jsonP = new JsonPeliculaDaoImpl(base + "/peliculas.json");
         JsonSocioDao jsonS = new JsonSocioDaoImpl(base + "/socios.json");
         JsonAlquilerDao jsonA = new JsonAlquilerDaoImpl(base + "/alquileres.json");
-        AlquilerService serv = new AlquilerService(jsonP,jsonS,jsonA);
+        AlquilerService serv = new AlquilerServiceImpl(jsonP,jsonS,jsonA);
         ConsoleApp app = new ConsoleApp(jsonP, jsonS, serv);
 
         try (Scanner scanner = new Scanner(System.in)) {

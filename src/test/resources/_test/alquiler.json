@@ -1,0 +1,3 @@
+[{"id":1,"socio":{"dni":"12345678A","nombre":"Ana"},"pelicula":{"titulo":"Matrix","anio":1999,"precio":2.5},"fechaAlquiler":"2026-01-10","fechaDevolucion":"2026-01-10","precio":2.5},
+  {"id":2,"socio":{"dni":"12345678A","nombre":"Ana"},"pelicula":{"titulo":"Matrix","anio":1999,"precio":2.5},"fechaAlquiler":"2026-01-10","fechaDevolucion":"2026-01-10","precio":2.5},
+  {"id":3,"socio":{"dni":"12345678A","nombre":"Ana"},"pelicula":{"titulo":"Matrix","anio":1999,"precio":2.5},"fechaAlquiler":"2026-01-10","fechaDevolucion":"2026-01-10","precio":2.5}]
