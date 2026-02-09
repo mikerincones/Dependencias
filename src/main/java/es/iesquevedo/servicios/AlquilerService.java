@@ -1,8 +1,6 @@
 package es.iesquevedo.servicios;
 
-import es.iesquevedo.dao.JsonAlquilerDao;
-import es.iesquevedo.dao.JsonPeliculaDao;
-import es.iesquevedo.dao.JsonSocioDao;
+import es.iesquevedo.dao.*;
 import es.iesquevedo.modelo.Alquiler;
 import es.iesquevedo.modelo.Pelicula;
 import es.iesquevedo.modelo.Socio;
@@ -17,20 +15,20 @@ public class AlquilerService {
     private final JsonSocioDao socioDao;
     private final int limitePorSocio;
 
-    public AlquilerService() {
+    public AlquilerService(JsonPeliculaDao jsonP,JsonSocioDao jsonS,JsonAlquilerDao jsonA) {
         // Acoplamiento directo: se crean las implementaciones concretas aquí.
         String base = System.getProperty("user.dir");
-        this.peliculaDao = new JsonPeliculaDao(base + "/peliculas.json");
-        this.socioDao = new JsonSocioDao(base + "/socios.json");
-        this.alquilerDao = new JsonAlquilerDao(base + "/alquileres.json");
+        this.peliculaDao = jsonP;
+        this.socioDao = jsonS;
+        this.alquilerDao = jsonA;
         this.limitePorSocio = 3;
     }
 
     // Constructor alternativo para pruebas que permite pasar rutas de fichero
     public AlquilerService(String basePath) {
-        this.peliculaDao = new JsonPeliculaDao(basePath + "/peliculas.json");
-        this.socioDao = new JsonSocioDao(basePath + "/socios.json");
-        this.alquilerDao = new JsonAlquilerDao(basePath + "/alquileres.json");
+        this.peliculaDao = new JsonPeliculaDaoImpl(basePath + "/peliculas.json");
+        this.socioDao = new JsonSocioDaoImpl(basePath + "/socios.json");
+        this.alquilerDao = new JsonAlquilerDaoImpl(basePath + "/alquileres.json");
         this.limitePorSocio = 3;
     }
 
